@@ -2,10 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import pprint
 
-res1 = requests.get('https://news.ycombinator.com/news')  # getting the first page of the website
-res2 = requests.get('https://news.ycombinator.com/news?p=2')  # getting the second page of the website
+res1 = requests.get('https://news.ycombinator.com/news')  # getting the first page of url
+res2 = requests.get('https://news.ycombinator.com/news?p=2')  # getting the second page of url
 soup1 = BeautifulSoup(res1.text, 'html.parser')  # converting the first page's data into text to be used
-soup2 = BeautifulSoup(res2.text, 'html.parser')  # doing the same for the second page's data
+soup2 = BeautifulSoup(res2.text, 'html.parser')  # same for second page
 
 links1 = soup1.select('.storylink')  # selecting the links and subtext of pages 1 and 2 from Hacker News
 subtext1 = soup1.select('.subtext')
@@ -33,4 +33,4 @@ def create_custom_hn(links, subtext):
     return sort_stories_by_votes(hn)
 
 
-pprint.pprint(create_custom_hn(both_links, both_subtext))  # utilizing the pretty print module
+pprint.pprint(create_custom_hn(both_links, both_subtext))  # using the pretty print module
