@@ -13,7 +13,7 @@ links2 = soup2.select('.storylink')
 subtext2 = soup2.select('.subtext')
 
 both_links = links1 + links2  # grabbing the links of pages 1 and 2
-both_subtext = subtext1 + subtext2  # grabbing the subtext of pages 1 and 2
+both_subtext = subtext1 + subtext2  # grabbing the subtext of pages 1 & 2
 
 
 def sort_stories_by_votes(hnlist):
